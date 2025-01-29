@@ -1,0 +1,53 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.sidebar {
+  height: 100vh;
+  background-color: #0077CC; /* Azul basado en tu imagen */
+  padding-top: 20px;
+}
+
+.nav-link {
+  color: white !important;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.nav-link:hover {
+  background-color: #005FA3;
+}
+
+h1, h2 {
+  color: #0077CC;
+}
+
+/* Contenedor del logo */
+.logo-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Estilos del logo */
+.logo {
+  width: 250px; /* Tamaño adecuado */
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Ajuste del formulario */
+form {
+  max-width: 600px;
+  margin: auto;
+}
+
+/* Botón de envío */
+.btn-primary {
+  background-color: #28A745;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #218838;
+}

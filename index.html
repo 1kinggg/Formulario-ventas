@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Ventas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Menú lateral -->
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block sidebar">
+                <div class="position-sticky">
+                    <h2 class="text-white text-center">Menú</h2>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#" id="showForm">📋 Formulario</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="showChart">📊 Gráficas</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Contenido principal -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <!-- Logo -->
+                <div class="logo-container">
+                    <img src="logo-fuxion.png" alt="Fuxion Logo" class="logo">
+                </div>
+
+                <h1 class="text-center mt-3">Formulario de Ventas</h1>
+
+                <!-- Formulario de Ventas -->
+                <div id="formSection">
+                    <form id="salesForm" class="mt-4">
+                        <div class="mb-3">
+                            <label>Nombre</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label>Apellido</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label>Celular</label>
+                            <input type="number" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label>Código de Venta</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label>Cuenta Office</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label>Producto Comprado</label>
+                            <select class="form-control">
+                                <option>A</option>
+                                <option>B</option>
+                                <option>C</option>
+                                <option>D</option>
+                                <option>E</option>
+                                <option>F</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label>Fecha de Compra</label>
+                            <input type="date" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label>Notas</label>
+                            <textarea class="form-control"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label>Estado del Cliente</label>
+                            <select class="form-control">
+                                <option>Cliente Nuevo</option>
+                                <option>Cliente Viejo</option>
+                                <option>Prospecto</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+                </div>
+
+                <!-- Sección de Gráficas -->
+                <div id="chartSection" class="mt-5" style="display: none;">
+                    <h2>Ventas por Mes</h2>
+                    <canvas id="salesChart"></canvas>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

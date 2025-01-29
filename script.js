@@ -18,14 +18,22 @@ document.addEventListener("DOMContentLoaded", function () {
   function renderChart() {
       const ctx = document.getElementById('salesChart').getContext('2d');
       new Chart(ctx, {
-          type: 'bar',
+          type: 'line',
           data: {
               labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
               datasets: [{
                   label: 'Ventas por Mes',
                   data: [50, 75, 40, 90, 120, 60],
-                  backgroundColor: '#28A745'
+                  borderColor: '#28A745',
+                  backgroundColor: 'rgba(40, 167, 69, 0.2)',
+                  borderWidth: 2
               }]
+          },
+          options: {
+              responsive: true,
+              animation: {
+                  duration: 2000
+              }
           }
       });
   }

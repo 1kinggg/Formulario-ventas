@@ -1,10 +1,18 @@
+/* Fondo y fuente */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
+  background: url('fuxion-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  margin: 0;
+  padding: 0;
 }
 
+/* Menú lateral */
 .sidebar {
   height: 100vh;
-  background-color: #0077CC; /* Azul basado en tu imagen */
+  background: rgba(0, 119, 204, 0.9);
+  backdrop-filter: blur(10px);
   padding-top: 20px;
 }
 
@@ -15,39 +23,55 @@ body {
 }
 
 .nav-link:hover {
-  background-color: #005FA3;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
-h1, h2 {
-  color: #0077CC;
-}
-
-/* Contenedor del logo */
+/* Logo */
 .logo-container {
   text-align: center;
   margin-top: 20px;
 }
 
-/* Estilos del logo */
 .logo {
-  width: 250px; /* Tamaño adecuado */
+  width: 250px;
   max-width: 100%;
-  display: block;
   margin: 0 auto;
+  display: block;
+  animation: fadeIn 2s ease-in-out;
 }
 
-/* Ajuste del formulario */
-form {
-  max-width: 600px;
+/* Formulario */
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  max-width: 700px;
   margin: auto;
+  color: #000;
 }
 
-/* Botón de envío */
+/* Botón */
 .btn-primary {
-  background-color: #28A745;
+  background: linear-gradient(45deg, #28a745, #218838);
   border: none;
+  color: #fff;
 }
 
 .btn-primary:hover {
-  background-color: #218838;
+  background: linear-gradient(45deg, #218838, #1e7e34);
+  transform: scale(1.05);
 }
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+

@@ -1,20 +1,32 @@
 document.addEventListener("DOMContentLoaded", function () {
   const showForm = document.getElementById("showForm");
   const showChart = document.getElementById("showChart");
+  const showReminders = document.getElementById("showReminders");
   const formSection = document.getElementById("formSection");
   const chartSection = document.getElementById("chartSection");
+  const remindersSection = document.getElementById("remindersSection");
 
+  // Cambiar entre secciones
   showForm.addEventListener("click", function () {
       formSection.style.display = "block";
       chartSection.style.display = "none";
+      remindersSection.style.display = "none";
   });
 
   showChart.addEventListener("click", function () {
       formSection.style.display = "none";
       chartSection.style.display = "block";
+      remindersSection.style.display = "none";
       renderChart();
   });
 
+  showReminders.addEventListener("click", function () {
+      formSection.style.display = "none";
+      chartSection.style.display = "none";
+      remindersSection.style.display = "block";
+  });
+
+  // Renderizar gráfico
   function renderChart() {
       const ctx = document.getElementById('salesChart').getContext('2d');
       new Chart(ctx, {
@@ -22,17 +34,22 @@ document.addEventListener("DOMContentLoaded", function () {
           data: {
               labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'],
               datasets: [{
-                  label: 'Ventas por Mes',
-                  data: [50, 75, 40, 90, 120, 60],
-                  borderColor: '#28A745',
-                  backgroundColor: 'rgba(40, 167, 69, 0.2)',
+                  label: 'Ventas',
+                  data: [50, 60, 70, 80, 90, 100],
+                  borderColor: 'rgba(75, 192, 192, 1)',
+                  backgroundColor: 'rgba(75, 192, 192, 0.2)',
                   borderWidth: 2
               }]
           },
           options: {
               responsive: true,
-              animation: {
-                  duration: 2000
+              plugins: {
+                  legend: {
+                      display: true,
+                      labels: {
+                          color: "#fff"
+                      }
+                  }
               }
           }
       });

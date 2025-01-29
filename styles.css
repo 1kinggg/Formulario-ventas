@@ -1,4 +1,4 @@
-/* Fondo y fuente */
+/* Fondo */
 body {
   font-family: 'Arial', sans-serif;
   background: url('fuxion-bg.jpg') no-repeat center center fixed;
@@ -8,70 +8,30 @@ body {
   padding: 0;
 }
 
-/* Menú lateral */
-.sidebar {
-  height: 100vh;
-  background: rgba(0, 119, 204, 0.9);
-  backdrop-filter: blur(10px);
-  padding-top: 20px;
-}
-
-.nav-link {
-  color: white !important;
-  font-size: 18px;
-  padding: 10px;
-}
-
-.nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Logo */
-.logo-container {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.logo {
-  width: 250px;
-  max-width: 100%;
-  margin: 0 auto;
-  display: block;
-  animation: fadeIn 2s ease-in-out;
-}
-
-/* Formulario */
+/* Glassmorphism */
 .glassmorphism {
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-  max-width: 700px;
-  margin: auto;
-  color: #000;
+  margin-bottom: 20px;
 }
 
-/* Botón */
+/* Botones y enlaces */
 .btn-primary {
-  background: linear-gradient(45deg, #28a745, #218838);
+  background: linear-gradient(45deg, #007BFF, #0056b3);
   border: none;
-  color: #fff;
 }
 
 .btn-primary:hover {
-  background: linear-gradient(45deg, #218838, #1e7e34);
-  transform: scale(1.05);
+  background: linear-gradient(45deg, #0056b3, #004085);
 }
 
-/* Animaciones */
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-  }
-  to {
-      opacity: 1;
-  }
+/* Tabla */
+.table {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
 }
 
 

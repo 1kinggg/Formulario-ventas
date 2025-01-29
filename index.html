@@ -3,108 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de Ventas</title>
+    <title>CRM de Ventas</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
-    <!-- Menú de navegación (Hamburguesa) -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Gestión de Ventas</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#" id="showForm">Formulario de Ventas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="showChart">Gráficos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="showReminders">Recordatorios</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+    <!-- Menú de navegación -->
+    <nav class="navbar">
+        <h1>CRM de Ventas</h1>
+        <ul>
+            <li><a href="#" id="showForm">📋 Formulario</a></li>
+            <li><a href="#" id="showCharts">📈 Gráficos</a></li>
+            <li><a href="#" id="showReminders">🔔 Recordatorios</a></li>
+            <li><button id="toggleMode">🌗 Modo</button></li>
+        </ul>
     </nav>
 
-    <!-- Contenido principal -->
-    <div class="container mt-4">
-        <!-- Formulario -->
-        <div id="formSection" class="glassmorphism">
-            <h2 class="text-center">Formulario de Ventas</h2>
+    <div class="container">
+        <!-- Formulario CRM -->
+        <div id="formContainer" class="content-box">
+            <h2>Formulario de Ventas</h2>
             <form id="salesForm">
-                <div class="mb-3">
+                <!-- Paso 1 -->
+                <div class="form-step active">
                     <label>Nombre</label>
-                    <input type="text" class="form-control" placeholder="Ingresa tu nombre" required>
-                </div>
-                <div class="mb-3">
+                    <input type="text" required>
                     <label>Apellido</label>
-                    <input type="text" class="form-control" placeholder="Ingresa tu apellido" required>
+                    <input type="text" required>
+                    <button type="button" class="next-btn">Siguiente</button>
                 </div>
-                <div class="mb-3">
-                    <label>Celular</label>
-                    <input type="number" class="form-control" placeholder="Ejemplo: 123456789" required>
-                </div>
-                <div class="mb-3">
-                    <label>Producto Comprado</label>
-                    <select class="form-control">
-                        <option>A</option>
-                        <option>B</option>
-                        <option>C</option>
-                        <option>D</option>
-                        <option>E</option>
-                        <option>F</option>
-                    </select>
-                </div>
-                <div class="mb-3">
+
+                <!-- Paso 2 -->
+                <div class="form-step">
                     <label>Fecha de Compra</label>
-                    <input type="date" class="form-control">
+                    <input type="date" required>
+                    <label>Código de Venta</label>
+                    <input type="text" required>
+                    <button type="button" class="prev-btn">Atrás</button>
+                    <button type="button" class="next-btn">Siguiente</button>
                 </div>
-                <button type="submit" class="btn btn-primary w-100">Enviar</button>
+
+                <!-- Paso 3 -->
+                <div class="form-step">
+                    <label>Producto Comprado</label>
+                    <select required>
+                        <option>Vita X</option>
+                        <option>Fuxion</option>
+                        <option>Passion</option>
+                    </select>
+                    <button type="button" class="prev-btn">Atrás</button>
+                    <button type="submit" class="submit-btn">Enviar</button>
+                </div>
             </form>
         </div>
 
         <!-- Gráficos -->
-        <div id="chartSection" class="glassmorphism" style="display: none;">
-            <h2 class="text-center">Gráficos de Ventas</h2>
+        <div id="chartContainer" class="content-box" style="display: none;">
+            <h2>Compras</h2>
+            <select id="timeRange">
+                <option value="day">Día</option>
+                <option value="week">Semana</option>
+                <option value="month">Mes</option>
+                <option value="year">Año</option>
+            </select>
             <canvas id="salesChart"></canvas>
         </div>
 
         <!-- Recordatorios -->
-        <div id="remindersSection" class="glassmorphism" style="display: none;">
-            <h2 class="text-center">Recordatorios</h2>
-            <p>Estos son los clientes que han comprado más de una vez:</p>
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Apellido</th>
-                        <th>Celular</th>
-                        <th>Producto</th>
-                        <th>Fecha</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Juan</td>
-                        <td>Pérez</td>
-                        <td>123456789</td>
-                        <td>A</td>
-                        <td>2023-11-27</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div id="remindersContainer" class="content-box" style="display: none;">
+            <h2>Clientes a contactar</h2>
+            <ul id="reminderList"></ul>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
-
-
